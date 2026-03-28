@@ -372,6 +372,7 @@ export class MyRoom extends Room {
                 target = new Ship;
                }
                    chain_tasks(ship, command, target, true);
+                   
             });
           }
         }
