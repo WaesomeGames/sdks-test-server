@@ -354,6 +354,7 @@ export class MyRoom extends Room {
               {
                 ship.currentTask = new Task;
               }
+              ship.statusMessage =ship.currentTask.name;
             }
         }
         //set next task in queue to current task
@@ -362,6 +363,7 @@ export class MyRoom extends Room {
           if (ship.queuedTasks.length != 0)
           {
             pepare_task(ship,ship.queuedTasks.shift(),this.clock.currentTime);
+            ship.statusMessage = ship.currentTask.name;
           }
           else if (ship.behavior.taskList.length != 0)
           {
@@ -371,7 +373,7 @@ export class MyRoom extends Room {
                {
                 target = new Ship;
                }
-                   chain_tasks(ship, command, target, true);
+               chain_tasks(ship, command, target, true);
                    
             });
           }
